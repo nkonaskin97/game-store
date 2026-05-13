@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Оплата - GAMER.STORE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="site-wrapper">
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo"><a href="index.html">GAMER.STORE</a></div>
+            <div class="search"><input type="text" placeholder="Поиск игр..."><button>🔍</button></div>
+            <div id="auth-container" class="auth-buttons">
+                <a href="login.html" class="auth-btn">Вход</a>
+                <a href="register.html" class="auth-btn primary">Регистрация</a>
+            </div>
+            <div id="user-container" class="user-info" style="display: none;">
+                <span class="username" id="username-display"></span>
+                <a href="profile.html" class="auth-btn">Профиль</a>
+                <button class="logout-btn" onclick="logout()">Выйти</button>
+            </div>
+        </div>
+        <nav class="nav">
+            <div class="container nav-container">
+                <a href="index.html" class="nav-link">Магазин</a>
+                <a href="about.html" class="nav-link">О нас</a>
+                <a href="howto.html" class="nav-link">Как купить</a>
+                <a href="payment.html" class="nav-link active">Оплата</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <h1>Способы оплаты и подписка</h1>
+            <div class="payment-grid">
+                <div class="payment-card">
+                    <h3>Способы оплаты</h3>
+                    <ul>
+                        <li>Банковская карта (Visa, Mastercard, МИР)</li>
+                        <li>Перевод на карту Сбер / Т-Банк / Альфа-Банк</li>
+                        <li>PayPal / ЮMoney</li>
+                        <li>Криптовалюта (USDT, BTC)</li>
+                        <li>Рассрочка на 3 месяца без процентов</li>
+                    </ul>
+                </div>
+                <div class="payment-card">
+                    <h3>Подписка GAMER.PRO</h3>
+                    <ul>
+                        <li>Доступ к 500+ играм</li>
+                        <li>Скидка 20% на все покупки</li>
+                        <li>Бесплатная доставка ключей</li>
+                        <li>Приоритетная поддержка 24/7</li>
+                    </ul>
+                    <p style="margin-top: 16px;"><strong>Цена: 399 ₽/месяц</strong></p>
+                </div>
+            </div>
+
+            <div class="table-block">
+                <h2>Сравнение тарифов подписки</h2>
+                <table class="clean-table">
+                    <thead>
+                    <tr><th>Тариф</th><th>Доступные игры</th><th>Скидка в магазине</th><th>Цена</th></tr>
+                    </thead>
+                    <tbody>
+                    <tr><td>Базовый</td><td>—</td><td>—</td><td>Бесплатно</td></tr>
+                    <tr><td>GAMER.PRO</td><td>500+</td><td>20%</td><td>399 ₽/мес</td></tr>
+                    <tr><td>GAMER.ULTRA</td><td>1000+</td><td>30%</td><td>699 ₽/мес</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container"><p>© GAMER.STORE — Подписка окупается с первой покупки</p></div>
+    </footer>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

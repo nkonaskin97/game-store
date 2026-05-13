@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>О нас - GAMER.STORE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="site-wrapper">
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo"><a href="index.html">GAMER.STORE</a></div>
+            <div class="search"><input type="text" placeholder="Поиск игр..."><button>🔍</button></div>
+            <div id="auth-container" class="auth-buttons">
+                <a href="login.html" class="auth-btn">Вход</a>
+                <a href="register.html" class="auth-btn primary">Регистрация</a>
+            </div>
+            <div id="user-container" class="user-info" style="display: none;">
+                <span class="username" id="username-display"></span>
+                <a href="profile.html" class="auth-btn">Профиль</a>
+                <button class="logout-btn" onclick="logout()">Выйти</button>
+            </div>
+        </div>
+        <nav class="nav">
+            <div class="container nav-container">
+                <a href="index.html" class="nav-link">Магазин</a>
+                <a href="about.html" class="nav-link active">О нас</a>
+                <a href="howto.html" class="nav-link">Как купить</a>
+                <a href="payment.html" class="nav-link">Оплата</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <h1>О магазине GAMER.STORE</h1>
+            <div class="about-grid">
+                <div class="about-card">
+                    <h3>Наша миссия</h3>
+                    <p>Мы делаем игры доступными. Честные цены, мгновенная доставка, официальные ключи от проверенных партнёров.</p>
+                </div>
+                <div class="about-card">
+                    <h3>Почему выбирают нас</h3>
+                    <ul class="feature-list">
+                        <li>Официальные лицензионные ключи</li>
+                        <li>Мгновенная доставка на email</li>
+                        <li>Круглосуточная поддержка</li>
+                        <li>Возврат в течение 14 дней</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="table-block">
+                <h3>Наши достижения</h3>
+                <table class="clean-table">
+                    <tr><th>Показатель</th><th>Значение</th></tr>
+                    <tr><td>Игр в каталоге</td><td>2500+</td></tr>
+                    <tr><td>Довольных покупателей</td><td>150 000+</td></tr>
+                    <tr><td>Средний рейтинг</td><td>4.8 / 5.0</td></tr>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container"><p>© GAMER.STORE — Твой проводник в мир игр</p></div>
+    </footer>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

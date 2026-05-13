@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Страница игры - GAMER.STORE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="site-wrapper">
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo"><a href="index.html">GAMER.STORE</a></div>
+            <div class="search">
+                <input type="text" placeholder="Поиск игр...">
+                <button>🔍</button>
+            </div>
+            <div id="auth-container" class="auth-buttons">
+                <a href="login.html" class="auth-btn">Вход</a>
+                <a href="register.html" class="auth-btn primary">Регистрация</a>
+            </div>
+            <div id="user-container" class="user-info" style="display: none;">
+                <span class="username" id="username-display"></span>
+                <a href="profile.html" class="auth-btn">Профиль</a>
+                <button class="logout-btn" onclick="logout()">Выйти</button>
+            </div>
+        </div>
+        <nav class="nav">
+            <div class="container nav-container">
+                <a href="index.html" class="nav-link">Магазин</a>
+                <a href="about.html" class="nav-link">О нас</a>
+                <a href="howto.html" class="nav-link">Как купить</a>
+                <a href="payment.html" class="nav-link">Оплата</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <div class="container" id="gameContainer">
+            <!-- Контент будет вставлен динамически -->
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© GAMER.STORE — Цифровая дистрибуция игр</p>
+        </div>
+    </footer>
+</div>
+
+<script src="script.js"></script>
+<script>
+    function loadGame() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const gameId = urlParams.get('id');
+
+        if (!gameId) {
+            window.location.href = 'index.html';
+            return;
+        }
+
+        const game = getGameById(gameId);
+        if (!game) {
+            window.location.href = 'index.html';
+            return;
+        }
+
+        const container = document.getElementById('gameContainer');
+        container.innerHTML = `
+                <div class="game-detail">
+                    <div class="game-gallery">
+                        <img src="${game.img}" alt="${game.name}">
+                    </div>
+                    <div class="game-description">
+                        <h1>${game.name}</h1>
+                        <div class="game-meta" style="margin-bottom: 16px;">
+                            <span class="genre">${game.genre}</span>
+                            <span class="rating">${'★'.repeat(Math.floor(game.rating))}${game.rating % 1 >= 0.5 ? '½' : ''}${'☆'.repeat(5 - Math.ceil(game.rating))}</span>
+                        </div>
+                        <p><strong>Дата выхода:</strong> ${game.releaseDate}</p>
+                        <p><strong>Разработчик:</strong> ${game.developer}</p>
+                        <p><strong>Издатель:</strong> ${game.publisher}</p>
+                        <p style="margin: 16px 0;">${game.description}</p>
+                        <div class="price-block">
+                            ${game.oldPrice > 0 ? `<span class="old-price">${game.oldPrice.toLocaleString()} ₽</span>` : ''}
+                            <span class="new-price">${game.newPrice === 0 ? 'Бесплатно' : game.newPrice.toLocaleString() + ' ₽'}</span>
+                        </div>
+                        <button class="buy-btn" onclick="addToCart(${game.id}); alert('${game.name} добавлена в корзину!')">Купить →</button>
+                    </div>
+                </div>
+                <div class="sys-req">
+                    <h3>Системные требования</h3>
+                    <ul>
+                        <li><strong>ОС:</strong> ${game.minRequirements.os}</li>
+                        <li><strong>Процессор:</strong> ${game.minRequirements.processor}</li>
+                        <li><strong>Оперативная память:</strong> ${game.minRequirements.memory}</li>
+                        <li><strong>Видеокарта:</strong> ${game.minRequirements.graphics}</li>
+                        <li><strong>Место на диске:</strong> ${game.minRequirements.storage}</li>
+                    </ul>
+                </div>
+            `;
+    }
+
+    loadGame();
+    updateAuthUI();
+</script>
+</body>
+</html>

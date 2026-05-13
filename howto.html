@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Как купить - GAMER.STORE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="site-wrapper">
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo"><a href="index.html">GAMER.STORE</a></div>
+            <div class="search"><input type="text" placeholder="Поиск игр..."><button>🔍</button></div>
+            <div id="auth-container" class="auth-buttons">
+                <a href="login.html" class="auth-btn">Вход</a>
+                <a href="register.html" class="auth-btn primary">Регистрация</a>
+            </div>
+            <div id="user-container" class="user-info" style="display: none;">
+                <span class="username" id="username-display"></span>
+                <a href="profile.html" class="auth-btn">Профиль</a>
+                <button class="logout-btn" onclick="logout()">Выйти</button>
+            </div>
+        </div>
+        <nav class="nav">
+            <div class="container nav-container">
+                <a href="index.html" class="nav-link">Магазин</a>
+                <a href="about.html" class="nav-link">О нас</a>
+                <a href="howto.html" class="nav-link active">Как купить</a>
+                <a href="payment.html" class="nav-link">Оплата</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <h1>Как купить игру за 3 минуты</h1>
+            <div class="steps">
+                <div class="step-item">
+                    <div class="step-number">01</div>
+                    <h3>Выбери игру</h3>
+                    <p>Найди игру в каталоге, изучи описание и системные требования.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">02</div>
+                    <h3>Нажми «Купить»</h3>
+                    <p>Товар добавится в корзину. Выбери удобный способ оплаты.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">03</div>
+                    <h3>Оплати заказ</h3>
+                    <p>Картой, переводом или в рассрочку. Деньги списываются сразу.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">04</div>
+                    <h3>Получи ключ</h3>
+                    <p>Ключ активации придёт на email в течение 1-5 минут. Активируй в Steam / Ubisoft Connect / EA App.</p>
+                </div>
+            </div>
+            <div class="alert-banner">
+                При первом заказе — скидка 10% по промокоду WELCOME10
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container"><p>© GAMER.STORE — Честные цены, быстрая доставка</p></div>
+    </footer>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

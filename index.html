@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAMER.STORE - Магазин цифровых игр</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="site-wrapper">
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo"><a href="index.html">GAMER.STORE</a></div>
+            <div class="search">
+                <input type="text" placeholder="Поиск игр...">
+                <button>🔍</button>
+            </div>
+            <div id="auth-container" class="auth-buttons">
+                <a href="login.html" class="auth-btn">Вход</a>
+                <a href="register.html" class="auth-btn primary">Регистрация</a>
+            </div>
+            <div id="user-container" class="user-info" style="display: none;">
+                <span class="username" id="username-display"></span>
+                <a href="profile.html" class="auth-btn">Профиль</a>
+                <button class="logout-btn" onclick="logout()">Выйти</button>
+            </div>
+        </div>
+        <nav class="nav">
+            <div class="container nav-container">
+                <a href="index.html" class="nav-link active">Магазин</a>
+                <a href="about.html" class="nav-link">О нас</a>
+                <a href="howto.html" class="nav-link">Как купить</a>
+                <a href="payment.html" class="nav-link">Оплата</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <div class="hero">
+                <h1>Горячие скидки до -80%</h1>
+                <p>Лучшие цены на лучшие игры. Мгновенная доставка, официальные ключи.</p>
+            </div>
+
+            <div class="games-grid" id="gamesGrid"></div>
+
+            <div class="table-block">
+                <h2>Лидеры продаж этой недели</h2>
+                <table class="clean-table">
+                    <thead>
+                    <tr><th>Игра</th><th>Жанр</th><th>Скидка</th><th>Цена</th></tr>
+                    </thead>
+                    <tbody>
+                    <tr><td>Elden Ring</td><td>RPG</td><td>-30%</td><td>2 799 ₽</td></tr>
+                    <tr><td>Counter-Strike 2</td><td>Shooter</td><td>Бесплатно</td><td>0 ₽</td></tr>
+                    <tr><td>Baldur's Gate 3</td><td>RPG</td><td>-15%</td><td>3 399 ₽</td></tr>
+                    <tr><td>Red Dead Redemption 2</td><td>Action</td><td>-60%</td><td>1 599 ₽</td></tr>
+                    </tbody>
+                </table>
+                <div class="table-footnote">* Акция действует до конца недели</div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© GAMER.STORE — Цифровая дистрибуция игр | Лучшие цены, мгновенная доставка</p>
+            <p>support@gamer.store | telegram: @gamer_store</p>
+        </div>
+    </footer>
+</div>
+
+<script src="script.js"></script>
+<script>
+    renderGamesGrid('gamesGrid');
+</script>
+</body>
+</html>

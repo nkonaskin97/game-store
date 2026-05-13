@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Мой профиль - GAMER.STORE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="site-wrapper">
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo"><a href="index.html">GAMER.STORE</a></div>
+            <div class="search">
+                <input type="text" placeholder="Поиск игр...">
+                <button>🔍</button>
+            </div>
+        </div>
+        <nav class="nav">
+            <div class="container nav-container">
+                <a href="index.html" class="nav-link">Магазин</a>
+                <a href="about.html" class="nav-link">О нас</a>
+                <a href="howto.html" class="nav-link">Как купить</a>
+                <a href="payment.html" class="nav-link">Оплата</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <div id="profileContent"></div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© GAMER.STORE — Цифровая дистрибуция игр</p>
+        </div>
+    </footer>
+</div>
+
+<script src="script.js"></script>
+<script>
+    function loadProfile() {
+        const container = document.getElementById('profileContent');
+
+        if (!Auth.isAuthenticated()) {
+            container.innerHTML = `
+                    <div class="auth-container">
+                        <h1>Доступ запрещён</h1>
+                        <p>Пожалуйста, войдите в систему, чтобы просмотреть профиль.</p>
+                        <a href="login.html" class="auth-submit" style="display: inline-block; text-align: center; text-decoration: none; margin-top: 20px;">Войти</a>
+                    </div>
+                `;
+            return;
+        }
+
+        const user = Auth.getCurrentUser();
+        const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+        const cartTotal = cart.reduce((sum, item) => sum + (item.newPrice * item.quantity), 0);
+
+        container.innerHTML = `
+                <div class="profile-info">
+                    <h1>Добро пожаловать, ${user.username}!</h1>
+                    <div class="profile-field">
+                        <strong>Имя пользователя:</strong> <span>${user.username}</span>
+                    </div>
+                    <div class="profile-field">
+                        <strong>Email:</strong> <span>${user.email}</span>
+                    </div>
+                    <div class="profile-field">
+                        <strong>На сайте с:</strong> <span>${new Date(parseInt(user.id)).toLocaleDateString('ru-RU')}</span>
+                    </div>
+                </div>
+
+                <div class="table-block">
+                    <h2>Корзина (${cart.length} товаров)</h2>
+                    ${cart.length === 0 ? '<p>Корзина пуста.</p>' : `
+                        <table class="clean-table">
+                            <thead>
+                                <tr><th>Игра</th><th>Количество</th><th>Цена</th><th>Итого</th></tr>
+                            </thead>
+                            <tbody>
+                                ${cart.map(item => `
+                                    <tr>
+                                        <td>${item.name}</td>
+                                        <td>${item.quantity}</td>
+                                        <td>${item.newPrice.toLocaleString()} ₽</td>
+                                        <td>${(item.newPrice * item.quantity).toLocaleString()} ₽</td>
+                                    </tr>
+                                `).join('')}
+                                <tr style="background: #1A1D2B;">
+                                    <td colspan="3"><strong>Итого</strong></td>
+                                    <td><strong>${cartTotal.toLocaleString()} ₽</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <button class="auth-submit" style="margin-top: 20px;" onclick="alert('Функция оформления заказа появится позже!')">Перейти к оформлению</button>
+                    `}
+                </div>
+            `;
+    }
+
+    loadProfile();
+</script>
+</body>
+</html>
