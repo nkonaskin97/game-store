@@ -3,70 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <title>О нас - GAMER.STORE</title>
+    <link rel="icon" type="image/jpeg" href="favicon.jpg">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
-    <link rel="icon" type="image/png" href="favicon.png">
-<div class="site-wrapper">
-    <header class="header">
-        <div class="container header-container">
-            <div class="logo"><a href="index.html">GAMER.STORE</a></div>
-            <div class="search"><input type="text" placeholder="Поиск игр..."><button>🔍</button></div>
-            <div id="auth-container" class="auth-buttons">
-                <a href="login.html" class="auth-btn">Вход</a>
-                <a href="register.html" class="auth-btn primary">Регистрация</a>
-            </div>
-            <div id="user-container" class="user-info" style="display: none;">
-                <span class="username" id="username-display"></span>
-                <a href="profile.html" class="auth-btn">Профиль</a>
-                <button class="logout-btn" onclick="logout()">Выйти</button>
-            </div>
-        </div>
-        <nav class="nav">
-            <div class="container nav-container">
-                <a href="index.html" class="nav-link">Магазин</a>
-                <a href="about.html" class="nav-link active">О нас</a>
-                <a href="howto.html" class="nav-link">Как купить</a>
-                <a href="payment.html" class="nav-link">Оплата</a>
-            </div>
-        </nav>
-    </header>
-
-    <main class="main">
-        <div class="container">
-            <h1>О магазине GAMER.STORE</h1>
-            <div class="about-grid">
-                <div class="about-card">
-                    <h3>Наша миссия</h3>
-                    <p>Мы делаем игры доступными. Честные цены, мгновенная доставка, официальные ключи от проверенных партнёров.</p>
+    <div class="site-wrapper">
+        <header class="header">
+            <div class="container header-container">
+                <div class="logo"><a href="index.html">GAMER.STORE</a></div>
+                <div class="search"><input type="text" placeholder="Поиск игр..."><button>🔍</button></div>
+                <div id="auth-container" class="auth-buttons">
+                    <a href="login.html" class="auth-btn">Вход</a>
+                    <a href="register.html" class="auth-btn primary">Регистрация</a>
                 </div>
-                <div class="about-card">
-                    <h3>Почему выбирают нас</h3>
-                    <ul class="feature-list">
-                        <li>Официальные лицензионные ключи</li>
-                        <li>Мгновенная доставка на email</li>
-                        <li>Круглосуточная поддержка</li>
-                        <li>Возврат в течение 14 дней</li>
-                    </ul>
+                <div id="user-container" class="user-info" style="display: none;">
+                    <span class="username" id="username-display"></span>
+                    <a href="profile.html" class="auth-btn">Профиль</a>
+                    <button class="logout-btn" onclick="logout()">Выйти</button>
                 </div>
             </div>
-            <div class="table-block">
-                <h3>Наши достижения</h3>
-                <table class="clean-table">
-                    <tr><th>Показатель</th><th>Значение</th></tr>
-                    <tr><td>Игр в каталоге</td><td>2500+</td></tr>
-                    <tr><td>Довольных покупателей</td><td>150 000+</td></tr>
-                    <tr><td>Средний рейтинг</td><td>4.8 / 5.0</td></tr>
-                </table>
-            </div>
-        </div>
-    </main>
+            <nav class="nav">
+                <div class="container nav-container">
+                    <a href="index.html" class="nav-link">Магазин</a>
+                    <a href="about.html" class="nav-link active">О нас</a>
+                    <a href="howto.html" class="nav-link">Как купить</a>
+                    <a href="payment.html" class="nav-link">Оплата</a>
+                </div>
+            </nav>
+        </header>
 
-    <footer class="footer">
-        <div class="container"><p>© GAMER.STORE — Твой проводник в мир игр</p></div>
-    </footer>
-</div>
-<script src="script.js"></script>
+        <main class="main">
+            <div class="container">
+                <h1>О разработчике</h1>
+                
+                <div class="about-developer">
+                    <div class="developer-photo">
+                        <img src="селфи.jpg" alt="Фото разработчика">
+                    </div>
+                    <div class="developer-info">
+                        <div class="info-card">
+                            <h3>Студент</h3>
+                            <p><strong>ФИО:</strong> Коняшкин Никита Алексеевич</p>
+                            <p><strong>Группа:</strong> ПрИ-31</p>
+                            <p><strong>Учебное заведение:</strong> ПГУТИ</p>
+                            <p><strong>Специальность:</strong> Программная инженерия</p>
+                        </div>
+                        <div class="info-card">
+                            <h3>О проекте</h3>
+                            <p>GAMER.STORE — это дипломный проект по дисциплине "Проектирование пользовательских интерфейсов".</p>
+                            <p>Цель проекта: разработать современный, удобный и визуально привлекательный интернет-магазин цифровых игр.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="table-block">
+                    <h3>Информация о проекте</h3>
+                    <table class="clean-table">
+                        <tr><th>Параметр</th><th>Значение</th></tr>
+                        <tr><td>Студент</td><td>Коняшкин Никита Алексеевич</td></tr>
+                        <tr><td>Группа</td><td>ПрИ-31</td></tr>
+                        <tr><td>Дисциплина</td><td>Проектирование пользовательских интерфейсов</td></tr>
+                        <tr><td>Год</td><td>2026</td></tr>
+                    </table>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <p>© GAMER.STORE — Цифровая дистрибуция игр | Коняшкин Н.А., ПГУТИ, 2026</p>
+            </div>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+    <style>
+        .about-developer {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 40px;
+            margin: 40px 0;
+        }
+        
+        .developer-photo img {
+            width: 100%;
+            border-radius: 16px;
+            border: 2px solid #5865F2;
+        }
+        
+        .developer-info {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        
+        .info-card {
+            background: #0F111A;
+            border: 1px solid #252A3E;
+            border-radius: 12px;
+            padding: 24px;
+        }
+        
+        .info-card h3 {
+            color: #5865F2;
+            margin-bottom: 16px;
+            font-size: 1.3rem;
+        }
+        
+        .info-card p {
+            margin: 8px 0;
+            color: #CBD5E1;
+        }
+        
+        @media (max-width: 700px) {
+            .about-developer {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </body>
 </html>
